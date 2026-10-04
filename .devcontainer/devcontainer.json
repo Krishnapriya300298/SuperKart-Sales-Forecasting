@@ -1,0 +1,21 @@
+{
+  "name": "SuperKart Deployment",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "forwardPorts": [
+    7860,
+    8501
+  ],
+  "postStartCommand": "bash start_app.sh",
+  "portsAttributes": {
+    "7860": {
+      "label": "Flask Backend",
+      "onAutoForward": "notify",
+      "visibility": "public"
+    },
+    "8501": {
+      "label": "Streamlit Frontend",
+      "onAutoForward": "openBrowser",
+      "visibility": "public"
+    }
+  }
+}
